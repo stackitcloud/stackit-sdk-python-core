@@ -1,3 +1,6 @@
+> ⓘ INFO: The STACKIt Python SDK is a beta and in active development.
+
+
 # STACKIT Python SDK Core
 
 ## Introduction

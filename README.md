@@ -1,4 +1,4 @@
-> ⓘ INFO: The STACKIt Python SDK is in beta and in active development.
+> ⓘ INFO: The STACKIT Python SDK is in beta and in active development.
 
 
 # STACKIT Python SDK Core

@@ -1,7 +1,7 @@
 install:
-	pip install .
+	poetry install
 install-dev:
-	pip install .[dev]
+	poetry install --only dev --no-root; pip install -e .
 test:
 	pytest
 lint:

@@ -1,0 +1,23 @@
+name: CI Workflow
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  main:
+    name: Build & Publish core
+    runs-on: "ubuntu-latest"
+    steps:      
+      - name: Checkout
+        uses: actions/checkout@v4     
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.8"
+      - name: Build & Publish to PyPi
+        uses: JRubics/poetry-publish@v2.0
+        with:
+          pypi_token: ${{ secrets.PYPI_TOKEN }}
+          poetry_publish_options: "--build"

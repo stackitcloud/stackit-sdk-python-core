@@ -21,9 +21,9 @@ When developing, you can use a feature of `pip` called _Editable Installs_,
 which installs the local files like a package so you can test features without
 reinstalling the package every time.
 This package also defines additional depencies for development, like testing and linting.
-It requires `poetry` to be installed.
+It requires [`poetry`](https://python-poetry.org/) to be installed. An installation guide can be found [here](https://python-poetry.org/docs/#installation).
 
-Execute the following in the root folder of this repository:
+After installing `poetry` execute the following in the root folder of this repository:
 
 ```bash
 make install-dev

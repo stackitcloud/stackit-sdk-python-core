@@ -49,7 +49,6 @@ class TestWait:
         "check_function",
         [
             create_check_function([400], 3, "Shouldn't be returned"),
-            
         ],
     )
     def test_throws_for_no_retry_status_code(self, check_function):
@@ -68,8 +67,7 @@ class TestWait:
             (
                 "I'm making a note here: HUGE SUCCESS.",
                 3,
-                create_check_function(
-                    [502, 504], 3, "I'm making a note here: HUGE SUCCESS."),
+                create_check_function([502, 504], 3, "I'm making a note here: HUGE SUCCESS."),
             ),
         ],
     )

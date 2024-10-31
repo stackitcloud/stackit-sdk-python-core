@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: "3.8"
       - name: Build & Publish to PyPi
-        uses: JRubics/poetry-publish@v2.0
-        with:
-          pypi_token: ${{ secrets.PYPI_TOKEN }}
-          poetry_publish_options: "--build"
+        run: |
+          pip install poetry
+          poetry publish --build --username="__token__" --password="${{ secrets.PYPI_TOKEN }}"
+          

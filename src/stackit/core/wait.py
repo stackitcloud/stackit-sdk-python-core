@@ -1,8 +1,6 @@
+import signal
 import time
 from http import HTTPStatus
-
-import signal
-import contextlib
 from typing import Any, Callable, Tuple, Union
 
 

@@ -43,7 +43,7 @@ class TestWait:
 
     def test_throttle_0_throws_error(self):
         with pytest.raises(ValueError, match="throttle can't be 0"):
-            wait = Wait(lambda: (True, None, None, None), throttle=0)
+            _ = Wait(lambda: (True, None, None, None), throttle=0)
 
     @pytest.mark.parametrize(
         "check_function",

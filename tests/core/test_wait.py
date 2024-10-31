@@ -3,7 +3,7 @@ from typing import Any, Callable, List, Tuple, Union
 
 import pytest
 
-from stackit.core.wait import Wait
+from stackit.core.wait import Wait, WaitConfig
 
 
 def timeout_check_function() -> Tuple[bool, Union[Exception, None], Union[int, None], Any]:
@@ -36,14 +36,14 @@ def create_check_function(
 
 class TestWait:
     def test_timeout_throws_timeouterror(self):
-        wait = Wait(timeout_check_function, timeout=1)
+        wait = Wait(timeout_check_function, WaitConfig(timeout=1))
 
         with pytest.raises(TimeoutError, match="Wait has timed out"):
             wait.wait()
 
     def test_throttle_0_throws_error(self):
         with pytest.raises(ValueError, match="throttle can't be 0"):
-            _ = Wait(lambda: (True, None, None, None), throttle=0)
+            _ = Wait(lambda: (True, None, None, None), WaitConfig(throttle=0))
 
     @pytest.mark.parametrize(
         "check_function",
@@ -77,5 +77,5 @@ class TestWait:
         error_retry_limit: int,
         check_function: Callable[[None], Tuple[bool, Union[Exception, None], Union[int, None], Any]],
     ):
-        wait = Wait(check_function, temp_error_retry_limit=error_retry_limit)
+        wait = Wait(check_function, WaitConfig(error_retry_limit))
         assert wait.wait() == correct_return

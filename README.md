@@ -1,4 +1,5 @@
-> ⓘ IMPORTANT NOTE: This repository is deprecated. Please use [this](https://github.com/stackitcloud/stackit-sdk-python) repository instead.
+> [!WARNING]  
+> This repository is deprecated as the `core` was moved to [`stackit-sdk-python`](https://github.com/stackitcloud/stackit-sdk-python). Please use that repository instead.
 
 # STACKIT Python SDK Core
 

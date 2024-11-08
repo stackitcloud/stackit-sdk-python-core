@@ -9,7 +9,7 @@ from typing import Any, Callable, List, Tuple, Union
 class WaitConfig:
     sleep_before_wait: int = 0
     throttle: int = 5
-    timeout: int = 30
+    timeout: int = 1800
     temp_error_retry_limit: int = 5
     retry_http_error_status_codes: List[int] = field(
         default_factory=lambda: [HTTPStatus.BAD_GATEWAY, HTTPStatus.GATEWAY_TIMEOUT]
@@ -38,7 +38,7 @@ class Wait:
         retry_temp_error_counter = 0
 
         signal.signal(signal.SIGALRM, Wait._timeout_handler)
-        signal.alarm(self._config.timeout * 60)
+        signal.alarm(self._config.timeout)
 
         while True:
 

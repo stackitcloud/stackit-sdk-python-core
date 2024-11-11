@@ -1,5 +1,5 @@
-> ⓘ INFO: The STACKIT Python SDK is in beta and in active development.
-
+> [!WARNING]  
+> This repository is deprecated as the `core` was moved to [`stackit-sdk-python`](https://github.com/stackitcloud/stackit-sdk-python). Please use that repository instead.
 
 # STACKIT Python SDK Core
 
